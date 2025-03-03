@@ -9,7 +9,8 @@ public class Main {
         pedido2.procesarPedido(101, true);
 
         // Convierte al cliente 1 en VIP y procesa un nuevo pedido de 1000 €
-        pedido1.cliente.esVip = true;
+        Cliente cliente1 = pedido1.getCliente();
+        cliente1.setEsVip(true);
         pedido1.procesarPedido(1000, true);
 
     }
