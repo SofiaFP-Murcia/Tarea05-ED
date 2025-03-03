@@ -1,7 +1,7 @@
 public class Pedido {
-    public Cliente cliente;
+    private Cliente cliente;
     public Pedido(Cliente cliente) {
-        this.cliente = cliente;
+        this.setCliente(cliente);
     }
 
     public void procesarPedido(double total) {
@@ -21,5 +21,13 @@ public class Pedido {
         } else {
             System.out.println("Pedido VIP aprobado. Total: " + total);
         }
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }
