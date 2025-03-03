@@ -4,22 +4,23 @@ public class Pedido {
         this.setCliente(cliente);
     }
 
-    public void procesarPedido(double total) {
-        if (total > 100) {
-            double descuento = total * 0.10;
-            double precioFinal = total - descuento;
-            System.out.println("Pedido aprobado. Total: " + precioFinal + " (descuento aplicado: " + descuento + ")");
+    public void procesarPedido(double total, boolean esVip) {
+        if (esVip) {
+            if (total > 100) {
+                double descuento = total * 0.15;
+                double precioFinal = total - descuento;
+                System.out.println("Pedido VIP aprobado. Total: " + precioFinal + " (descuento aplicado: " + descuento + ")");
+            } else {
+                System.out.println("Pedido VIP aprobado. Total: " + total);
+            }
         } else {
-            System.out.println("Pedido aprobado. Total: " + total);
-        }
-    }
-    public void procesarPedidoVIP(double total) {
-        if (total > 100) {
-            double descuento = total * 0.15;
-            double precioFinal = total - descuento;
-            System.out.println("Pedido VIP aprobado. Total: " + precioFinal + " (descuento aplicado: " + descuento + ")");
-        } else {
-            System.out.println("Pedido VIP aprobado. Total: " + total);
+            if (total > 100) {
+                double descuento = total * 0.10;
+                double precioFinal = total - descuento;
+                System.out.println("Pedido aprobado. Total: " + precioFinal + " (descuento aplicado: " + descuento + ")");
+            } else {
+                System.out.println("Pedido aprobado. Total: " + total);
+            }
         }
     }
 
